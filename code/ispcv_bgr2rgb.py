@@ -18,14 +18,16 @@ if img is None:
 # display the type after reading
 print(type(img))
 
-# Display image
-cv.imshow("BGR - CV2", img)
-
 # Convert to RGB
 img_RGB = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 
 # Display image
-cv.imshow("RGB - CV2", img_RGB)
+# cv.imshow("BGR - CV2", img)
+# cv.imshow("RGB - CV2", img_RGB)
+
+# Concatenate the images
+img_conc = cv.hconcat([img, img_RGB])
+cv.imshow("CV2 - BGR (left) vs RGB (right", img_conc)
 
 # Displaying same image using Matplotlib
 fig = plt.figure(num="Matplotlib", figsize=(8, 4))
